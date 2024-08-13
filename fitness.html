@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Fitness Calculator</h2>
+    <label for="feet">Height (in feet and inches):</label>
+    <input type="number" id="feet" placeholder="Feet" required>
+    <input type="number" id="inches" placeholder="Inches" required>
+    
+    <label for="weight">Weight (in kg):</label>
+    <input type="number" id="weight" placeholder="Enter your weight" required>
+    
+    <button onclick="calculateFitness()">Calculate Fitness</button>
+    
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateFitness() {
+        const feet = document.getElementById('feet').value;
+        const inches = document.getElementById('inches').value;
+        const weight = document.getElementById('weight').value;
+
+        if (feet && inches && weight) {
+            const heightInInches = (parseInt(feet) * 12) + parseInt(inches);
+            const heightInMeters = heightInInches * 0.0254; // Convert height to meters
+            const bmi = weight / (heightInMeters * heightInMeters);
+
+            let fitnessStatus = '';
+
+            if (bmi < 18.5) {
+                fitnessStatus = 'Underweight - You may need to gain weight.';
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                fitnessStatus = 'Normal - Your fitness is good.';
+            } else if (bmi >= 25 && bmi < 29.9) {
+                fitnessStatus = 'Overweight - You may need to lose weight.';
+            } else {
+                fitnessStatus = 'Obese - It is recommended to lose weight for better health.';
+            }
+
+            document.getElementById('result').innerHTML = `Your BMI is ${bmi.toFixed(2)}. ${fitnessStatus}`;
+        } else {
+            document.getElementById('result').innerHTML = 'Please enter your height and weight.';
+        }
+    }
+</script>
+
+</body>
+</html>
