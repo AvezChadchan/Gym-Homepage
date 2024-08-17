@@ -1,9 +1,11 @@
 body {
-    background: url('img/gymback2.jpg');
+    background: url('img/gymback2.jpg') no-repeat;
+    background-color: black;
     margin: 0px;
     padding: 0px;
     color: white;
     font-family: "Margarine", "Ga Maamli", sans-serif;
+    height: 1000px;
 }
 
 .left {
@@ -83,7 +85,6 @@ body {
 .container {
     border: 3px solid grey;
     margin: 235px 90px;
-    /* margin-left: 600px; */
     padding: 30px 35px;
     width: 25%;
     border-radius: 20px;
@@ -97,7 +98,7 @@ body {
 section{
     text-align: center;
     margin-top: 200px;
-    margin-left: 300px;
+    margin-left: 280px;
     border: 3px solid white;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.66);
