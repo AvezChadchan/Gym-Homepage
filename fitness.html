@@ -27,7 +27,7 @@
 
         if (feet && inches && weight) {
             const heightInInches = (parseInt(feet) * 12) + parseInt(inches);
-            const heightInMeters = heightInInches * 0.0254; // Convert height to meters
+            const heightInMeters = heightInInches * 0.0254;
             const bmi = weight / (heightInMeters * heightInMeters);
 
             let fitnessStatus = '';
