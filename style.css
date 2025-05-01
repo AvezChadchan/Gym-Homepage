@@ -1,125 +1,140 @@
-body {
-    background: url('img/gymback2.jpg') no-repeat;
-    background-color: black;
-    margin: 0px;
-    padding: 0px;
-    color: white;
-    font-family: "Margarine", "Ga Maamli", sans-serif;
-    height: 1000px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.left {
-    display: inline-block;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg') no-repeat center center/cover;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+}
+
+/* Optional dark overlay */
+body::before {
+    content: "";
     position: absolute;
-    left: 50px;
-    top: 20px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .left img {
-    width: 75px;
-    height: 75px;
-    filter: invert(100%);
+    width: 60px;
+    border-radius: 50%;
 }
 
-.left div {
-    line-height: 0px;
-    padding: 0px;
-    margin: 0px;
+.left h4 {
+    font-family: 'Margarine', cursive;
+    margin-left: 10px;
+    color: white;
+}
+
+.mid .navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00ffcc;
+}
+
+/* Hero section */
+.hero {
     text-align: center;
-    font-size: 17px;
+    padding: 100px 20px 40px;
 }
 
-.mid {
-    display: block;
-    width: 50%;
-    margin: 30px auto;
-}
-
-.right {
-    position: absolute;
-    right: 50px;
-    top: 20px;
-    display: inline-block;
+.hero h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .btn {
-    background-color: rgb(40, 39, 39);
+    background-color: #111;
     color: white;
-    text-align: center;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    margin: 10px;
     cursor: pointer;
-    padding: 10px 13px;
-    font-family: "Margarine", "Ga Maamli", sans-serif;
-    font-size: 18px;
-    border: 2px solid black;
-    border-radius: 17px;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background-color: rgb(77, 74, 74);
-    text-decoration: underline;
+    background-color: #444;
+    transform: scale(1.05);
 }
 
-.navbar {
-    border: 3px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(30px);
-}
-
-.navbar li {
-    display: inline-block;
-}
-
-.navbar li a {
-    color: white;
-    text-decoration: none;
-    padding: 34px 25px;
-    font-size: 23px;
-}
-
-.navbar li a:hover,
-.navbar li a.active {
-    color: grey;
-    text-decoration: underline;
-    padding: 34px 25px;
-}
-
+/* Registration form container */
 .container {
-    border: 3px solid grey;
-    margin: 235px 90px;
-    padding: 30px 35px;
-    width: 25%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    font-size: 20px;
-    cursor: default;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     text-align: center;
-    backdrop-filter: blur(30px);
-    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.18);
 }
 
-section{
-    text-align: center;
-    margin-top: 200px;
-    margin-left: 280px;
-    border: 3px solid white;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.66);
-    width: 900px;
-    height: 250px;
+.container h1 {
+    font-family: 'Margarine', cursive;
     font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
 }
 
-.form-group input {
-    font-family: 'Franklin Gothic Medium';
-    display: block;
-    width: 300px;
-    margin: 7px auto;
-    padding: 7px;
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    margin-top: 5px;
+    outline: none;
     text-align: center;
-    border: 3px solid #635d5d;
-    border-radius: 8px;
 }
 
-.form-group button {
-    display: block;
-    width: 30%;
-    margin: 15px auto;
+/* Gender radio buttons */
+.gender {
+    text-align: left;
+}
+
+.gender input[type="radio"] {
+    margin: 10px;
 }
